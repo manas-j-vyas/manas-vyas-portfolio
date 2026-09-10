@@ -1,8 +1,6 @@
 export const navigation = [
-  { label: 'Home', href: '#home' },
-  { label: 'About', href: '#about' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Services', href: '#services' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Contact', href: '#contact' },
+  { number: '01', label: 'About', href: '#about' },
+  { number: '02', label: 'Capabilities', href: '#services' },
+  { number: '03', label: 'Work', href: '#projects' },
+  { number: '04', label: 'Contact', href: '#contact' },
 ];
