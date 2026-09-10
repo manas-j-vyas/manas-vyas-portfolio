@@ -1,4 +1,5 @@
 .hero-visual-wrap { position: relative; z-index: 1; }
+.hero-signature { margin: 0 0 8px; color: var(--primary); font: 10px var(--mono); letter-spacing: .07em; text-transform: uppercase; }
 .hero-visual-stack { position: relative; min-height: 470px; padding: 52px 0 0 72px; }
 .profile-frame { position: absolute; z-index: 2; top: 0; left: 0; width: 190px; overflow: hidden; border: 1px solid rgba(255,115,92,.75); border-radius: 12px; background: var(--surface-2); box-shadow: 18px 18px 0 rgba(180,239,131,.6); transform: rotate(-5deg); }
 .profile-frame img { display: block; width: 100%; height: 220px; object-fit: cover; }

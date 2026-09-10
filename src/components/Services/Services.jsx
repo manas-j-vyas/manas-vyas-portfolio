@@ -1,6 +1,8 @@
+import { ArrowUpRight } from 'lucide-react';
 import { services } from '../../data/services.js';
 import { ScrollReveal } from '../ScrollReveal/ScrollReveal.jsx';
+import './Services.css';
 
 export function Services() {
-  return <section id="services" className="section-shell section-block services-section"><div className="section-kicker"><span>03</span><p>What I do</p></div><div className="section-intro"><h2>What I Can <em>Do</em></h2><p>From first idea to final launch, I build digital experiences with care.</p></div><div className="services-grid">{services.map(({ icon: Icon, title, text }, index) => <ScrollReveal key={title} delay={(index % 4) * 70}><article className="service-card"><div className="service-icon"><Icon size={21} /></div><span className="service-number">0{index + 1}</span><h3>{title}</h3><p>{text}</p><a href="#contact" aria-label={`Ask about ${title}`}>Learn more <span>↗</span></a></article></ScrollReveal>)}</div></section>;
+  return <section id="services" className="section-shell section-block services-section editorial-section"><div className="section-kicker"><span>03</span><p>What I do</p></div><div className="services-editorial-intro"><h2>Useful work,<br /><em>properly built.</em></h2><p>Whether it is a first website or a tired one that needs a reset, I keep the process clear and the result easy to live with.</p></div><div className="services-list">{services.map(({ title, text }, index) => <ScrollReveal key={title} delay={(index % 4) * 55}><a className="service-row" href="#contact"><span className="service-number">{String(index + 1).padStart(2, '0')}</span><h3>{title}</h3><p>{text}</p><ArrowUpRight className="service-arrow" size={19} /></a></ScrollReveal>)}</div></section>;
 }
