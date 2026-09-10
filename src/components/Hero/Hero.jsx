@@ -5,7 +5,7 @@ export function Hero() {
   return <section id="home" className="hero section-shell">
     <div className="hero-copy">
       <ScrollReveal><p className="eyebrow"><span className="eyebrow-dot" /> WordPress Developer <span className="eyebrow-line" /></p></ScrollReveal>
-      <ScrollReveal delay={100}><h1>Hi, I'm<br /><em>Manas Vyas.</em></h1></ScrollReveal>
+      <ScrollReveal delay={100}><h1>Hi, I'm<br /><em>Manas Vyas</em></h1></ScrollReveal>
       <ScrollReveal delay={180}><p className="hero-description">I build modern, responsive, user-friendly WordPress websites that help businesses create a strong online presence.</p></ScrollReveal>
       <ScrollReveal delay={260}><div className="hero-actions"><a className="button button-primary" href="#projects">View My Work <ArrowUpRight size={17} /></a><a className="button button-ghost" href="#contact">Contact Me <ArrowDownRight size={17} /></a></div></ScrollReveal>
       <ScrollReveal delay={340}><div className="hero-location"><span>Based in</span><strong>Nallasopara, Mumbai</strong><i>Available for select projects</i></div></ScrollReveal>

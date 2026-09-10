@@ -35,6 +35,10 @@ npm run preview
 
 The contact form validates in the browser and opens a prefilled `mailto:` link. No backend or email service is configured.
 
+## SEO Configuration
+
+Set `VITE_SITE_URL` in a local `.env` file to the final HTTPS production domain before deploying. The React SEO component uses it for the canonical URL, absolute Open Graph image URL, and structured data. Replace the placeholder domain in `public/robots.txt` and `public/sitemap.xml` with the same value. Do not commit `.env` files.
+
 ## GitHub
 
 Create `manas-vyas-portfolio` under the `manas-j-vyas` GitHub account, then authenticate manually and run:

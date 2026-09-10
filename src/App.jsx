@@ -7,7 +7,8 @@ import { Projects } from './components/Projects/Projects.jsx';
 import { Process } from './components/Process/Process.jsx';
 import { Contact } from './components/Contact/Contact.jsx';
 import { Footer } from './components/Footer/Footer.jsx';
+import { SEO } from './components/SEO/SEO.jsx';
 
 export default function App() {
-  return <><Navbar /><main><Hero /><About /><Skills /><Services /><Projects /><Process /><Contact /></main><Footer /></>;
+  return <><SEO /><Navbar /><main><Hero /><About /><Skills /><Services /><Projects /><Process /><Contact /></main><Footer /></>;
 }
