@@ -59,7 +59,7 @@ The current hero uses a clearly marked local developer placeholder at `src/asset
 
 ## SEO Configuration
 
-Set `VITE_SITE_URL` in a local `.env` file to the final HTTPS production domain before deploying. The React SEO component uses it for the canonical URL, absolute Open Graph image URL, and structured data. Replace the placeholder domain in `public/robots.txt` and `public/sitemap.xml` with the same value. Do not commit `.env` files.
+Set `VITE_SITE_URL=https://manas-vyas-portfolio-1u8xfelzu-mnv6.vercel.app` in the Vercel environment and any local `.env` file used for production metadata. The React SEO component uses it for the canonical URL, absolute Open Graph image URL, and structured data. The same URL is configured in `public/robots.txt` and `public/sitemap.xml`. Do not commit `.env` files.
 
 ## GitHub
 

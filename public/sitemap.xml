@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Replace the placeholder with the value used in VITE_SITE_URL before deployment. -->
   <url>
-    <loc>https://your-production-domain.com/</loc>
+    <loc>https://manas-vyas-portfolio-1u8xfelzu-mnv6.vercel.app/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>

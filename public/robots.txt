@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# Set VITE_SITE_URL before deployment and replace this placeholder in the sitemap URL.
-Sitemap: https://your-production-domain.com/sitemap.xml
+Sitemap: https://manas-vyas-portfolio-1u8xfelzu-mnv6.vercel.app/sitemap.xml
