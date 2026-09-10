@@ -1,0 +1,19 @@
+:root {
+  --bg: #111317;
+  --surface: #171a20;
+  --surface-2: #1d2129;
+  --surface-3: #242934;
+  --primary: #ff735c;
+  --primary-soft: #ff9a87;
+  --secondary: #b4ef83;
+  --text: #f3f1eb;
+  --muted: #9a9da6;
+  --muted-dark: #666b76;
+  --border: rgba(243, 241, 235, .12);
+  --border-strong: rgba(243, 241, 235, .24);
+  --serif: Georgia, 'Times New Roman', serif;
+  --sans: 'Manrope', system-ui, sans-serif;
+  --mono: 'DM Mono', monospace;
+  --shell: min(1180px, calc(100% - 64px));
+  --ease: cubic-bezier(.22, .61, .36, 1);
+}
