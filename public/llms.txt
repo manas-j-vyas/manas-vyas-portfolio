@@ -1,0 +1,24 @@
+# Manas Vyas Portfolio
+
+Manas Vyas is a WordPress Developer based in Nallasopara, Mumbai, Maharashtra, India.
+
+## Services
+
+- WordPress website development
+- Elementor development
+- WooCommerce development
+- WordPress theme customization
+- Website redesign
+- Responsive website development
+- Website performance optimization
+- WordPress maintenance
+
+## Technologies
+
+WordPress, Elementor, WooCommerce, HTML, CSS, JavaScript, PHP, Git, responsive design, performance optimization, and SEO basics.
+
+## Contact
+
+Email: manavvyas0205@gmail.com
+Phone: +91 9484646252
+GitHub: https://github.com/manas-j-vyas
