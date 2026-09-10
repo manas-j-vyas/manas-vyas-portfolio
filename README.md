@@ -47,6 +47,10 @@ The contact form validates in the browser and sends submissions through the serv
 
 The Resend API key is used only by `api/contact.js`; it must never be placed in React code, `public/`, or committed `.env` files.
 
+For diagnostics, `GET /api/contact` returns `{ "ok": true, "service": "contact-api" }`. A real submission must use `POST /api/contact`. The API logs only request/configuration presence and safe Resend error metadata; it never logs form contents or secrets.
+
+The default `from` address is Resend's `onboarding@resend.dev` testing sender. Resend may restrict that sender to the account owner's testing email. For delivery to `manavvyas0205@gmail.com`, verify a domain in Resend and set `CONTACT_FROM_EMAIL` to a sender on that verified domain. Add `RESEND_API_KEY`, `CONTACT_TO_EMAIL`, and `CONTACT_FROM_EMAIL` to the Vercel Production environment, then trigger a new deployment.
+
 ## Animation and Profile Image
 
 GSAP and ScrollTrigger power the hero entrance, section/card reveals, project image parallax, navbar state, mobile menu, and scroll progress indicator. Animations use cleanup contexts, avoid layout properties, and respect `prefers-reduced-motion`. The custom cursor only runs for fine pointers and never captures pointer events.

@@ -42,7 +42,11 @@ function renderRows(fields, submitted) {
 }
 
 export default async function handler(request, response) {
+  if (request.method === 'GET') return response.status(200).json({ ok: true, service: 'contact-api' });
   if (request.method !== 'POST') return response.status(405).json({ success: false, message: 'Method not allowed.' });
+  console.log('[CONTACT_API] request received');
+  console.log(`[CONTACT_API] RESEND_API_KEY present: ${Boolean(process.env.RESEND_API_KEY)}`);
+  console.log(`[CONTACT_API] CONTACT_TO_EMAIL present: ${Boolean(process.env.CONTACT_TO_EMAIL)}`);
   let payload;
   try {
     payload = typeof request.body === 'string' ? JSON.parse(request.body) : request.body || {};
@@ -53,7 +57,7 @@ export default async function handler(request, response) {
 
   const { fields, errors } = validate(payload);
   if (Object.keys(errors).length) return response.status(400).json({ success: false, message: 'Please check the form fields.', errors });
-  if (!process.env.RESEND_API_KEY || !process.env.CONTACT_TO_EMAIL) return response.status(500).json({ success: false, message: 'Something went wrong. Please try again.' });
+  if (!process.env.RESEND_API_KEY || !process.env.CONTACT_TO_EMAIL) return response.status(500).json({ success: false, message: 'Unable to send your message right now.' });
 
   const submitted = new Intl.DateTimeFormat('en-IN', { dateStyle: 'long', timeStyle: 'short', timeZone: 'Asia/Kolkata' }).format(new Date());
   const html = `<div style="font-family:Arial,sans-serif;max-width:680px;margin:0 auto;color:#101828"><div style="background:#111317;padding:28px 30px;color:#f3f1eb"><h1 style="margin:0;font-size:24px">New Portfolio Contact Request</h1><p style="margin:8px 0 0;color:#ff9a87">Manas Vyas · WordPress Developer</p></div><div style="padding:20px 30px"><table style="width:100%;border-collapse:collapse">${renderRows(fields, submitted)}</table></div></div>`;
@@ -61,7 +65,8 @@ export default async function handler(request, response) {
 
   try {
     const resend = new Resend(process.env.RESEND_API_KEY);
-    await resend.emails.send({
+    console.log('[CONTACT_API] attempting resend');
+    const { error } = await resend.emails.send({
       from: process.env.CONTACT_FROM_EMAIL || 'Portfolio Website <onboarding@resend.dev>',
       to: [process.env.CONTACT_TO_EMAIL],
       replyTo: fields.email,
@@ -69,8 +74,14 @@ export default async function handler(request, response) {
       html,
       text,
     });
+    if (error) {
+      console.error('[CONTACT_API] resend failed', { name: error.name, message: error.message, statusCode: error.statusCode, code: error.code });
+      return response.status(502).json({ success: false, message: 'Unable to send your message right now.' });
+    }
+    console.log('[CONTACT_API] resend succeeded');
     return response.status(200).json({ success: true, message: 'Your message has been sent successfully.' });
-  } catch {
-    return response.status(500).json({ success: false, message: 'Something went wrong. Please try again.' });
+  } catch (error) {
+    console.error('[CONTACT_API] resend failed', { name: error.name, message: error.message, statusCode: error.statusCode, code: error.code });
+    return response.status(502).json({ success: false, message: 'Unable to send your message right now.' });
   }
 }

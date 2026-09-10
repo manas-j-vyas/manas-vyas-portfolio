@@ -60,7 +60,10 @@ export function Contact() {
         body: JSON.stringify(form),
       });
       const result = await response.json();
-      if (!response.ok || !result.success) throw new Error(result.message);
+      if (!response.ok || !result.success) {
+        setStatus({ type: 'error', message: result.message || 'Unable to send your message right now.' });
+        return;
+      }
       setForm(initialForm);
       setValidationErrors({});
       setStatus({ type: 'success', message: "Thanks for reaching out! Your message has been sent successfully. I'll get back to you soon." });
