@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import { Navbar } from './components/Navbar/Navbar.jsx';
 import { Hero } from './components/Hero/Hero.jsx';
 import { About } from './components/About/About.jsx';
@@ -8,7 +9,12 @@ import { Process } from './components/Process/Process.jsx';
 import { Contact } from './components/Contact/Contact.jsx';
 import { Footer } from './components/Footer/Footer.jsx';
 import { SEO } from './components/SEO/SEO.jsx';
+import { CustomCursor } from './components/CustomCursor/CustomCursor.jsx';
+import { ScrollProgress } from './components/ScrollProgress/ScrollProgress.jsx';
+import { usePortfolioAnimations } from './hooks/usePortfolioAnimations.js';
 
 export default function App() {
-  return <><SEO /><Navbar /><main><Hero /><About /><Skills /><Services /><Projects /><Process /><Contact /></main><Footer /></>;
+  const rootRef = useRef(null);
+  usePortfolioAnimations(rootRef);
+  return <div ref={rootRef}><SEO /><ScrollProgress /><CustomCursor /><Navbar /><main><Hero /><About /><Skills /><Services /><Projects /><Process /><Contact /></main><Footer /></div>;
 }

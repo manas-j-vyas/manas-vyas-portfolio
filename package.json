@@ -13,8 +13,10 @@
     "vite": "latest"
   },
   "dependencies": {
+    "gsap": "^3.15.0",
     "lucide-react": "latest",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "resend": "^6.27.0"
   }
 }

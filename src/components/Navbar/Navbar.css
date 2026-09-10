@@ -1,0 +1,2 @@
+.navbar { transition: background .3s ease, box-shadow .3s ease, border-color .3s ease; }
+.navbar.is-scrolled { background: rgba(17, 19, 23, .78); border-color: var(--border-strong); box-shadow: 0 12px 30px rgba(0, 0, 0, .18); backdrop-filter: blur(14px); }

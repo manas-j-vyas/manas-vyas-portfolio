@@ -1,0 +1,9 @@
+.contact-form label { position: relative; }
+.contact-form .optional { color: var(--muted-dark); text-transform: lowercase; }
+.contact-form .field-error { margin-top: -2px; color: var(--primary-soft); font: 10px var(--sans); text-transform: none; }
+.contact-form input[aria-invalid="true"], .contact-form textarea[aria-invalid="true"] { border-color: var(--primary-soft); }
+.contact-form .form-status { margin: 8px 0 0; font-size: 12px; }
+.contact-form .form-status.success { color: var(--secondary); }
+.contact-form .form-status.error { color: var(--primary-soft); }
+.contact-form .button:disabled { cursor: wait; opacity: .7; transform: none; box-shadow: none; }
+.contact-form .honeypot { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }

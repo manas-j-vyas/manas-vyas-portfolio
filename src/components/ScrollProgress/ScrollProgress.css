@@ -1,0 +1,1 @@
+.scroll-progress { position: fixed; inset: 0 0 auto; z-index: 90; height: 2px; background: var(--primary); transform: scaleX(0); transform-origin: left center; pointer-events: none; }

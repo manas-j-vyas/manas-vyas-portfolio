@@ -33,7 +33,25 @@ npm run build
 npm run preview
 ```
 
-The contact form validates in the browser and opens a prefilled `mailto:` link. No backend or email service is configured.
+The contact form validates in the browser and sends submissions through the server-side Vercel function at `/api/contact`. Visitor messages are not stored in the browser.
+
+## Contact Form and Resend
+
+1. Create a [Resend](https://resend.com) account and generate an API key.
+2. Copy `.env.example` to `.env.local` for local configuration.
+3. Set `RESEND_API_KEY` and `CONTACT_TO_EMAIL=manavvyas0205@gmail.com` in `.env.local`.
+4. Use `CONTACT_FROM_EMAIL=Portfolio Website <onboarding@resend.dev>` for initial Resend testing, or replace it with a sender address on a verified domain.
+5. For local Vercel function testing, use `vercel dev` so `/api/contact` is available; plain `npm run dev` serves the Vite frontend only.
+6. In Vercel, add `RESEND_API_KEY`, `CONTACT_TO_EMAIL`, and optionally `CONTACT_FROM_EMAIL` under Project Settings → Environment Variables.
+7. Deploy and test a valid submission, validation errors, honeypot rejection, failure state, delivered fields, timestamp, and Reply-To behavior.
+
+The Resend API key is used only by `api/contact.js`; it must never be placed in React code, `public/`, or committed `.env` files.
+
+## Animation and Profile Image
+
+GSAP and ScrollTrigger power the hero entrance, section/card reveals, project image parallax, navbar state, mobile menu, and scroll progress indicator. Animations use cleanup contexts, avoid layout properties, and respect `prefers-reduced-motion`. The custom cursor only runs for fine pointers and never captures pointer events.
+
+The current hero uses a clearly marked local developer placeholder at `src/assets/images/profile/manas-vyas-placeholder.svg`. To use the real photo, add your image at `src/assets/images/profile/manas-vyas.jpg`, then update the `profileImage` import in `src/components/Hero/Hero.jsx`. Do not commit a photo you do not intend to publish.
 
 ## SEO Configuration
 

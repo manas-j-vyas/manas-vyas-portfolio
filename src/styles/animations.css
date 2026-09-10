@@ -4,6 +4,7 @@
 .reveal.fade-right { transform: translateX(-24px); }
 .reveal.scale { transform: scale(.96); }
 .reveal.is-visible { opacity: 1; transform: none; }
+.gsap-reveal { will-change: transform, opacity; }
 @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
 @keyframes blink { 50% { opacity: 0; } }
 @media (prefers-reduced-motion: reduce) {
