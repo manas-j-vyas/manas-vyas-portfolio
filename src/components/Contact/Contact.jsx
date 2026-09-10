@@ -83,7 +83,7 @@ export function Contact() {
   return (
     <section id="contact" className="contact-section">
       <div className="section-shell section-block">
-        <div className="section-kicker"><span>06</span><p>Get in touch</p></div>
+        <div className="section-kicker"><span>08</span><p>Get in touch</p></div>
         <div className="contact-heading">
           <ScrollReveal><h2>Let's Build Something <em>Together.</em></h2><p>Have a project in mind or need help with your WordPress website? Feel free to get in touch.</p></ScrollReveal>
         </div>
