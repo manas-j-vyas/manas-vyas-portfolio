@@ -2,7 +2,7 @@ import { Resend } from 'resend';
 
 const limits = { name: 100, mobile: 30, email: 254, subject: 200, message: 5000, company: 200 };
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const indianMobilePattern = /^(?:\+91|0)?[6-9]\d{9}$/;
+const indianMobilePattern = /^(?:\+91[6-9]\d{9}|[6-9]\d{9})$/;
 
 function escapeHtml(value) {
   return value.replace(/[&<>'"]/g, (character) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' })[character]);
@@ -24,7 +24,7 @@ function validate(payload) {
   const errors = {};
   if (!fields.name || fields.name.length < 2) errors.name = 'Please enter your name.';
   if (fields.name.length > limits.name) errors.name = 'Please enter a shorter name.';
-  if (!fields.mobile || !indianMobilePattern.test(fields.mobile.replace(/[\s-]/g, ''))) errors.mobile = 'Please enter a valid mobile number.';
+  if (!fields.mobile || !indianMobilePattern.test(fields.mobile)) errors.mobile = 'Please enter a valid 10-digit mobile number.';
   if (fields.mobile.length > limits.mobile) errors.mobile = 'Please enter a shorter mobile number.';
   if (!fields.email || !emailPattern.test(fields.email)) errors.email = 'Please enter a valid email address.';
   if (fields.email.length > limits.email) errors.email = 'Please enter a shorter email address.';
